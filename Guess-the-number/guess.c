@@ -65,7 +65,7 @@ int main(){
         printf("\nYour guess: ");
 
         if (scanf("%d", &guess) != 1){      // Check user input | Just numbers
-            while (getchar() != '\n');   // Clean o buffer
+            while (getchar() != '\n');   // Clears o buffer
             continue;
         }
 
