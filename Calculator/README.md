@@ -12,7 +12,7 @@ A simple terminal-based calculator built in C as my first project in the languag
 ## 🛠️ Requirements
 
 - GCC compiler
-- Windows (uses `windows.h` for `Sleep` and `system("cls")`)
+- Windows (uses `unistd.h` for `Sleep` and `system("cls")`)
 
 ## 🚀 How to run
 
