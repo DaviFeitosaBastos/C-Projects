@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h> // Adds the library that recognize your OS
+#include <unistd.h> // Adds the library that used usleep
 #include <ctype.h> // Adds a library that checks the data
 
 // Clean the terminal
 void clear(){
-    system("cls");
+    system("clear");
 }
 
 // Adds delay to the program
-void delay(int ms){ // This arg will determinate the milisecond 
-    Sleep(ms);
+void delay_seconds(int s){ // This arg will determinate the milisecond 
+    sleep(s * 1000);
 }
 
 // Print the menu to the terminal
@@ -41,7 +41,7 @@ char calculator(){
         if (isdigit(op)){
             clear();
             printf("Type only the operators");
-            Sleep(2000);
+            delay_seconds(3);
         } else {
             return op;
         }
@@ -50,19 +50,15 @@ char calculator(){
 
 // Verify the operator input if not one else return invalid
 char verifier(char calc){
-    while (1){
-        switch (calc){
-            case '+':
-                return calc;
-            case '-':
-                return calc;
-            case '*':
-                return calc;
-            case '/':
-                return calc;
-            default:
-                printf("This doesn't exist");
-        }
+    switch (calc){
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            return calc;
+        default:
+            printf("This doesn't exist\n");
+            return '0'; // ou tratar erro
     }
 }
 
@@ -94,7 +90,7 @@ void number_input(char op){
         scanf("%f", &number2);
         if (op == '/' && number2 == 0) { // It checks if the you're dividing a number to 0
             printf("It's impossible to divide by 0\n");
-            Sleep(2000);
+            delay_seconds(2);
             continue;
         }
         switch (op){
@@ -105,13 +101,13 @@ void number_input(char op){
             case '*':
                 result = multiply(number1, number2); break;
             case '/':
-                result = divide(number1, number2); 
+                result = divide(number1, number2); break;
             default:
                 printf("This doesn't exist");    
         }
         clear();
-        printf("Result: %.2f", result);
-        Sleep(2000);
+        printf("Result: %.2f\n", result);
+        delay_seconds(2);
         break;
     }
 }
@@ -124,18 +120,19 @@ int main(){
         switch (choice){
             case 1: {
                 char op = verifier(calculator());
-                number_input(op);
-                break;
+                if (op != '0') {
+                    number_input(op);
+                }
             }  
             case 0: 
                 clear();
                 printf("Okay exiting...");
-                delay(2000);
+                delay_seconds(2);
                 clear();
                 return 0;        
             default: 
                 printf("\nInvalid option try again!");
-                delay(2000);
+                delay_seconds(2);
                 clear();        
         } 
     }
