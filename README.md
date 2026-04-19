@@ -1,21 +1,21 @@
-# 🖥️ C Projects
+# C Projects
 
 A collection of small projects built in C while learning the language, coming from Python.
 
-## 📁 Projects
+## Projects
 
-### 🧮 [Calculator](./Calculator)
+### [Calculator](./Calculator)
 A terminal-based calculator with basic operations, input validation and error handling.
 
-### 🎲 [Guess The Number](./Guess-the-number)
+### [Guess The Number](./Guess-the-number)
 A terminal-based number guessing game with 10 attempts, hints and play again option.
 
-## 🛠️ Requirements
+## Requirements
 
 - GCC compiler
 - Windows (projects use `windows.h` for `Sleep`)
 
-## 🚀 How to compile and run
+## How to compile and run
 ```bash
 # navigate to the project folder
 cd Calculator
@@ -28,7 +28,7 @@ gcc guess.c -o guess
 ./guess
 ```
 
-## 🧠 Concepts covered
+## Concepts covered
 
 - Variables, types and operators
 - Functions and modularization
@@ -38,13 +38,13 @@ gcc guess.c -o guess
 - Random number generation
 - Cross-platform terminal handling
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [ ] To-do list in C
 - [ ] Hangman game
 - [ ] Contact book with file saving
 
-## 👨‍💻 Author
+## Author
 
 Made by [Davi Feitosa Bastos](https://github.com/DaviFeitosaBastos)
 
