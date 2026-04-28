@@ -10,7 +10,7 @@ void clear(){
 
 // Adds delay to the program
 void delay_seconds(int s){ // This arg will determinate the milisecond 
-    sleep(s * 1000);
+    usleep(s * 1000);
 }
 
 // Print the menu to the terminal
